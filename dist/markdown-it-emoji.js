@@ -921,7 +921,7 @@ module.exports = {
 'use strict';
 
 
-function quoteRE (str) {
+function quoteRE(str) {
   return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
 }
 
@@ -1000,7 +1000,7 @@ module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE)
   function splitTextToken(text, level, Token) {
     var token, last_pos = 0, nodes = [];
 
-    text.replace(replaceRE, function(match, offset, src) {
+    text.replace(replaceRE, function (match, offset, src) {
       var emoji_name;
       // Validate emoji name
       if (shortcuts.hasOwnProperty(match)) {
