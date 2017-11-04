@@ -1,8 +1,8 @@
 # markdown-it-emoji
 
-[![Build Status](https://img.shields.io/travis/markdown-it/markdown-it-emoji/master.svg?style=flat)](https://travis-ci.org/markdown-it/markdown-it-emoji)
-[![NPM version](https://img.shields.io/npm/v/markdown-it-emoji.svg?style=flat)](https://www.npmjs.org/package/markdown-it-emoji)
-[![Coverage Status](https://coveralls.io/repos/markdown-it/markdown-it-emoji/badge.svg?branch=master&service=github)](https://coveralls.io/github/markdown-it/markdown-it-emoji?branch=master)
+[![Build Status](https://img.shields.io/travis/GerHobbelt/markdown-it-emoji/master.svg?style=flat)](https://travis-ci.org/GerHobbelt/markdown-it-emoji)
+[![NPM version](https://img.shields.io/npm/v/@gerhobbelt/markdown-it-emoji.svg?style=flat)](https://www.npmjs.org/package/@gerhobbelt/markdown-it-emoji)
+[![Coverage Status](https://coveralls.io/repos/GerHobbelt/markdown-it-emoji/badge.svg?branch=master&service=github)](https://coveralls.io/github/GerHobbelt/markdown-it-emoji?branch=master)
 
 > Plugin for [markdown-it](https://github.com/markdown-it/markdown-it) markdown parser, adding emoji & emoticon syntax support.
 
@@ -21,8 +21,8 @@ Also supports emoticons [shortcuts](https://github.com/markdown-it/markdown-it-e
 node.js, browser:
 
 ```bash
-npm install markdown-it-emoji --save
-bower install markdown-it-emoji --save
+npm install @gerhobbelt/markdown-it-emoji --save
+bower install @gerhobbelt/markdown-it-emoji --save
 ```
 
 ## Use
@@ -30,10 +30,10 @@ bower install markdown-it-emoji --save
 ### init
 
 ```js
-var md = require('markdown-it')();
-var emoji = require('markdown-it-emoji');
+var md = require('@gerhobbelt/markdown-it')();
+var emoji = require('@gerhobbelt/markdown-it-emoji');
 // Or for light version
-// var emoji = require('markdown-it-emoji/light');
+// var emoji = require('@gerhobbelt/markdown-it-emoji/light');
 
 md.use(emoji [, options]);
 ```
@@ -98,4 +98,4 @@ style:
 
 ## License
 
-[MIT](https://github.com/markdown-it/markdown-it-emoji/blob/master/LICENSE)
+[MIT](https://github.com/GerHobbelt/markdown-it-emoji/blob/master/LICENSE)

@@ -4,8 +4,8 @@
 var path = require('path');
 
 
-var markdownit  = require('markdown-it');
-var generate    = require('markdown-it-testgen');
+var markdownit  = require('@gerhobbelt/markdown-it');
+var generate    = require('@gerhobbelt/markdown-it-testgen');
 
 var emoji       = require('..');
 var emoji_light = require('../light');

@@ -1,6 +1,6 @@
 {
-  "name": "markdown-it-emoji",
-  "version": "1.2.1-2",
+  "name": "@gerhobbelt/markdown-it-emoji",
+  "version": "1.2.1-3",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/markdown-it/markdown-it-emoji",
   "repository": {
     "type": "git",
-    "url": "git://github.com/markdown-it/markdown-it-emoji.git"
+    "url": "git://github.com/GerHobbelt/markdown-it-emoji.git"
   },
   "bugs": {
     "url": "https://github.com/markdown-it/markdown-it-emoji/issues"
@@ -23,7 +23,8 @@
   "main": "index.js",
   "scripts": {
     "test": "make test",
-    "build": "make"
+    "build": "make",
+    "pub": "npm publish --access public"
   },
   "files": [
     "index.js",
@@ -32,16 +33,14 @@
     "dist/"
   ],
   "devDependencies": {
-    "browserify": "14.1.0",
-    "coveralls": "2.11.16",
-    "eslint": "3.16.0",
-    "eslint-plugin-nodeca": "1.0.3",
+    "browserify": "14.5.0",
+    "eslint": "4.10.0",
     "istanbul": "0.4.5",
     "lodash": "4.17.4",
-    "markdown-it": "GerHobbelt/markdown-it",
-    "markdown-it-testgen": "0.1.4",
-    "mocha": "3.2.0",
-    "request": "2.79.0",
-    "uglify-js": "2.7.5"
+    "@gerhobbelt/markdown-it": "8.4.0-16",
+    "@gerhobbelt/markdown-it-testgen": "0.1.5-5",
+    "mocha": "4.0.1",
+    "request": "2.83.0",
+    "uglify-js": "3.1.6"
   }
 }
