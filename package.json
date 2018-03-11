@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/markdown-it-emoji",
-  "version": "1.2.1-4",
+  "version": "1.2.1-5",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
