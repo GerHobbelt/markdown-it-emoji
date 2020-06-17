@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/markdown-it-emoji",
-  "version": "1.4.0-5",
+  "version": "1.4.0-6",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -13,27 +13,41 @@
   ],
   "repository": "GerHobbelt/markdown-it-emoji",
   "license": "MIT",
-  "main": "index.js",
+  "type": "module",
+  "source": "index.js",
+  "main": "dist/markdownItEmoji.js",
+  "module": "dist/markdownItEmoji.mjs",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "test": "make test",
     "build": "make",
+    "test": "make test",
+    "todo": "make todo",
+    "clean": "make clean",
+    "superclean": "make superclean",
+    "doc": "make doc",
+    "lint": "make lint",
+    "lintfix": "make lintfix",
+    "cov": "make report-coverage",
     "pub": "npm publish --access public"
   },
-  "files": [
-    "index.js",
-    "light.js",
-    "lib/",
-    "dist/"
-  ],
   "devDependencies": {
-    "browserify": "16.5.0",
-    "eslint": "6.6.0",
-    "istanbul": "0.4.5",
-    "lodash": "4.17.15",
-    "@gerhobbelt/markdown-it": "10.0.0-30",
-    "@gerhobbelt/markdown-it-testgen": "0.1.5-6",
-    "mocha": "6.2.2",
-    "request": "2.88.0",
-    "uglify-js": "3.6.8"
-  }
+    "@gerhobbelt/markdown-it": "11.0.0-36",
+    "@gerhobbelt/markdown-it-testgen": "0.1.6-7",
+    "@gerhobbelt/prepend-header": "1.0.8-3",
+    "camelcase": "6.0.0",
+    "chai": "4.2.0",
+    "cross-env": "7.0.2",
+    "eslint": "7.2.0",
+    "microbundle": "0.12.1",
+    "mocha": "8.0.1",
+    "nyc": "15.1.0",
+    "request": "2.88.2"
+  },
+  "reporter": [
+    "lcov",
+    "text",
+    "text-summary"
+  ]
 }

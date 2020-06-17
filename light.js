@@ -1,23 +1,21 @@
-'use strict';
+
+import emojies_defs from './lib/data/light.json';
+import emojies_shortcuts from './lib/data/shortcuts';
+import emoji_html from './lib/render';
+import create_rule from './lib/replace';
+import normalize_opts from './lib/normalize_opts';
 
 
-var emojies_defs      = require('./lib/data/light.json');
-var emojies_shortcuts = require('./lib/data/shortcuts');
-var emoji_html        = require('./lib/render');
-var emoji_replace     = require('./lib/replace');
-var normalize_opts    = require('./lib/normalize_opts');
-
-
-module.exports = function emoji_plugin(md, options) {
-  var defaults = {
+export default function emoji_plugin(md, options) {
+  let defaults = {
     defs: emojies_defs,
     shortcuts: emojies_shortcuts,
     enabled: []
   };
 
-  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
+  let opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
 
   md.renderer.rules.emoji = emoji_html;
 
-  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-};
+  md.core.ruler.push('emoji', create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
+}

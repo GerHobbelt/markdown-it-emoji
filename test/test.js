@@ -1,21 +1,23 @@
-'use strict';
+/* eslint-env mocha, es6 */
 
+import path from 'path';
+import fs from 'fs';
+import assert from 'assert';
 
-var path        = require('path');
-var fs          = require('fs');
-var assert      = require('assert');
+import markdownit from '@gerhobbelt/markdown-it';
+import generate from '@gerhobbelt/markdown-it-testgen';
 
+import emoji from '../';
+import emoji_light from '../light';
 
-var markdownit  = require('@gerhobbelt/markdown-it');
-var generate    = require('@gerhobbelt/markdown-it-testgen');
+import emojies_shortcuts from '../lib/data/shortcuts';
+import emojies_defs from '../lib/data/full.json';
+import emojies_defs_light from '../lib/data/light.json';
 
-var emoji       = require('..');
-var emoji_light = require('../light');
 
 
 describe('markdown-it-emoji', function () {
-  var md;
-
+  let md;
 
   md = markdownit().use(emoji);
   generate(path.join(__dirname, 'fixtures/default'), { header: true }, md);
@@ -35,7 +37,6 @@ describe('markdown-it-emoji', function () {
   });
   generate(path.join(__dirname, 'fixtures/options.txt'), { header: true }, md);
 
-
   md = markdownit().use(emoji, { enabled: [ 'smile', 'grin' ] });
   generate(path.join(__dirname, 'fixtures/whitelist.txt'), { header: true }, md);
 
@@ -45,7 +46,7 @@ describe('markdown-it-emoji', function () {
 
 
 describe('markdown-it-emoji-light', function () {
-  var md;
+  let md;
 
   md = markdownit().use(emoji_light);
   generate(path.join(__dirname, 'fixtures/default'), { header: true }, md);
@@ -73,10 +74,6 @@ describe('markdown-it-emoji-light', function () {
 });
 
 
-var emojies_shortcuts  = require('../lib/data/shortcuts');
-var emojies_defs       = require('../lib/data/full.json');
-var emojies_defs_light = require('../lib/data/light.json');
-
 describe('integrity', function () {
 
   it('all shortcuts should exist', function () {
@@ -94,13 +91,13 @@ describe('integrity', function () {
   });
 
   it('all light chars should exist', function () {
-    var visible = fs.readFileSync(path.join(__dirname, '../support/visible.txt'), 'utf8');
+    let visible = fs.readFileSync(path.join(__dirname, '../support/visible.txt'), 'utf8');
 
-    var available = Object.keys(emojies_defs_light).map(function (k) {
+    let available = Object.keys(emojies_defs_light).map(function (k) {
       return emojies_defs_light[k].replace(/\uFE0F/g, '');
     });
 
-    var missed = '';
+    let missed = '';
 
     Array.from(visible).forEach(function (ch) {
       if (available.indexOf(ch) < 0) missed += ch;

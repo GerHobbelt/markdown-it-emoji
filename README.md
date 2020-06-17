@@ -22,7 +22,6 @@ node.js, browser:
 
 ```bash
 npm install @gerhobbelt/markdown-it-emoji --save
-bower install @gerhobbelt/markdown-it-emoji --save
 ```
 
 ## Use
@@ -98,4 +97,4 @@ style:
 
 ## License
 
-[MIT](https://github.com/GerHobbelt/markdown-it-emoji/blob/master/LICENSE)
+[MIT](https://github.com/GerHobbelt/markdown-it-emoji/LICENSE)
