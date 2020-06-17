@@ -33,14 +33,14 @@
     "dist/"
   ],
   "devDependencies": {
-    "browserify": "16.1.1",
-    "eslint": "4.18.2",
+    "browserify": "16.5.0",
+    "eslint": "6.6.0",
     "istanbul": "0.4.5",
-    "lodash": "4.17.5",
-    "@gerhobbelt/markdown-it": "8.4.1-17",
-    "@gerhobbelt/markdown-it-testgen": "0.1.5-5",
-    "mocha": "5.0.4",
-    "request": "2.83.0",
-    "uglify-js": "3.3.14"
+    "lodash": "4.17.15",
+    "@gerhobbelt/markdown-it": "10.0.0-30",
+    "@gerhobbelt/markdown-it-testgen": "0.1.5-6",
+    "mocha": "6.2.2",
+    "request": "2.88.0",
+    "uglify-js": "3.6.8"
   }
 }
