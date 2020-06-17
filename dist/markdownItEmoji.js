@@ -1,4 +1,4 @@
-/*! markdown-it-emoji 1.4.0-6 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
+/*! markdown-it-emoji 1.4.0-7 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
 
 'use strict';
 
