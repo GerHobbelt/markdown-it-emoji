@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/markdown-it-emoji",
-  "version": "1.2.1-5",
+  "version": "1.4.0-5",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -11,14 +11,7 @@
     "emoticon",
     "emoticons"
   ],
-  "homepage": "https://github.com/markdown-it/markdown-it-emoji",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/GerHobbelt/markdown-it-emoji.git"
-  },
-  "bugs": {
-    "url": "https://github.com/markdown-it/markdown-it-emoji/issues"
-  },
+  "repository": "GerHobbelt/markdown-it-emoji",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
