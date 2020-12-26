@@ -1,9 +1,7 @@
 
 import emojies_defs from './lib/data/full.json';
 import emojies_shortcuts from './lib/data/shortcuts';
-import emoji_html from './lib/render';
-import create_rule from './lib/replace';
-import normalize_opts from './lib/normalize_opts';
+var bare_emoji_plugin = require('./bare');
 
 
 export default function emoji_plugin(md, options) {
@@ -13,9 +11,7 @@ export default function emoji_plugin(md, options) {
     enabled: []
   };
 
-  let opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
+  var opts = md.utils.assign({}, defaults, options || {});
 
-  md.renderer.rules.emoji = emoji_html;
-
-  md.core.ruler.push('emoji', create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-}
+  bare_emoji_plugin(md, opts);
+};
