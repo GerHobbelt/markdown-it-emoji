@@ -75,7 +75,7 @@ describe('markdown-it-emoji-light', function () {
 });
 
 describe('markdown-it-emoji-bare', function () {
-  var md;
+  let md;
 
   md = markdownit().use(emoji_bare);
   generate(path.join(__dirname, 'fixtures/bare.txt'), { header: true }, md);

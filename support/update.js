@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-'use strict';
+
 
 /* eslint-env es6 */
 /* eslint-disable no-console */

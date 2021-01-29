@@ -1,19 +1,19 @@
-'use strict';
 
 
-var emoji_html        = require('./lib/render');
-var emoji_replace     = require('./lib/replace');
-var normalize_opts    = require('./lib/normalize_opts');
+
+let emoji_html        = require('./lib/render');
+let emoji_replace     = require('./lib/replace');
+let normalize_opts    = require('./lib/normalize_opts');
 
 
 module.exports = function emoji_plugin(md, options) {
-  var defaults = {
+  let defaults = {
     defs: {},
     shortcuts: {},
     enabled: []
   };
 
-  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
+  let opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
 
   md.renderer.rules.emoji = emoji_html;
 

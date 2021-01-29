@@ -2,10 +2,8 @@
 
 /* eslint no-console:0 */
 
-
-
-const argparse = require('argparse');
-const hdr = require('./header.js');
+import argparse from 'argparse';
+import hdr from './header.js';
 
 const cli = new argparse.ArgumentParser({
   prog: 'getGlobalName',
@@ -21,6 +19,10 @@ cli.addArgument([ 'type' ], {
 
 const options = cli.parseArgs();
 
+function print(msg) {
+  process.stdout.write(msg);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 switch (options.type) {
@@ -29,22 +31,27 @@ default:
   break;
 
 case 'version':
-  cli.exit(0, hdr.version);
+  print(hdr.version);
+  cli.exit(0);
   break;
 
 case 'package':
-  cli.exit(0, hdr.packageName);
+  print(hdr.packageName);
+  cli.exit(0);
   break;
 
 case 'global':
-  cli.exit(0, hdr.globalName);
+  print(hdr.globalName);
+  cli.exit(0);
   break;
 
 case 'microbundle':
-  cli.exit(0, hdr.safeVariableName);
+  print(hdr.safeVariableName);
+  cli.exit(0);
   break;
 
 case 'license':
-  cli.exit(0, hdr.license);
+  print(hdr.license);
+  cli.exit(0);
   break;
 }

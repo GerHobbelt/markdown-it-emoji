@@ -19,7 +19,7 @@ const plugins = [
 const plugins_minify = [
   terser({
     format: {
-      ascii_only: true,
+      ascii_only: true
     }
   })
 ];
