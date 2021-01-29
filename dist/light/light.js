@@ -1,13 +1,6 @@
-'use strict';
-
-var path = require('path');
-var fs = require('fs');
-var url = require('url');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var path__default = /*#__PURE__*/_interopDefaultLegacy(path);
-var fs__default = /*#__PURE__*/_interopDefaultLegacy(fs);
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 
 // Emoticons -> Emoji mapping.
 //
@@ -219,11 +212,11 @@ function emoji_plugin(md, options) {
   md.core.ruler.push('emoji', create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
 }
 
-const __filename$1 = url.fileURLToPath((typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('markdown-it-emoji.js', document.baseURI).href)));
+const __filename = fileURLToPath(import.meta.url);
 
-const __dirname$1 = path__default['default'].dirname(__filename$1);
+const __dirname = path.dirname(__filename);
 
-const emojies_defs = JSON.parse(fs__default['default'].readFileSync(path__default['default'].normalize(path__default['default'].join(__dirname$1, './lib/data/light.json')), 'utf8'));
+const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, './lib/data/light.json')), 'utf8'));
 function emoji_plugin$1(md, options) {
   let defaults = {
     defs: emojies_defs,
@@ -234,4 +227,4 @@ function emoji_plugin$1(md, options) {
   emoji_plugin(md, opts);
 }
 
-module.exports = emoji_plugin$1;
+export default emoji_plugin$1;

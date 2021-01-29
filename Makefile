@@ -29,15 +29,13 @@ lintfix:
 bundle:
 	-rm -rf ./dist
 	mkdir dist
-	microbundle --no-compress --target node --strict --name ${GLOBAL_NAME}
+	microbundle --no-compress --target node --strict --name ${GLOBAL_NAME} -f modern
 	mkdir dist/light
-	microbundle --no-compress --target node --strict --name emoji-light    --no-sourcemap --no-pkg-main -f cjs -o dist/light ./light.js
+	microbundle --no-compress --target node --strict --name emoji-light    --no-sourcemap --no-pkg-main -f modern -o dist/light ./light.js
 	mv dist/light/markdown-it-emoji.js dist/light/light.js
 	mkdir dist/bare
-	microbundle --no-compress --target node --strict --name emoji-bare     --no-sourcemap --no-pkg-main -f cjs -o dist/bare  ./bare.js
+	microbundle --no-compress --target node --strict --name emoji-bare     --no-sourcemap --no-pkg-main -f modern -o dist/bare  ./bare.js
 	mv dist/bare/markdown-it-emoji.js dist/bare/bare.js
-	#microbundle --no-compress --target node --strict --name test           --no-sourcemap --no-pkg-main -f cjs -o test test/test.js
-	#mv test/markdown-it-emoji.js test/test5.js
 	npx prepend-header 'dist/*js' support/header.js
 
 test:
@@ -46,7 +44,7 @@ test:
 coverage:
 	-rm -rf coverage
 	-rm -rf .nyc_output
-	cross-env NODE_ENV=test nyc mocha 
+	cross-env NODE_ENV=test nyc mocha
 
 report-coverage: lint coverage
 

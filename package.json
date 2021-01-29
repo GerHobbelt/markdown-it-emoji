@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/markdown-it-emoji",
-  "version": "2.0.0-8",
+  "version": "2.0.0-9",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -15,8 +15,7 @@
   "license": "MIT",
   "type": "module",
   "source": "index.js",
-  "main": "dist/markdownItEmoji.js",
-  "module": "dist/markdownItEmoji.mjs",
+  "main": "dist/markdownItEmoji.modern.js",
   "engines": {
     "node": ">=12.20.0"
   },

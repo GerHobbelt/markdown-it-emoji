@@ -1,5 +1,3 @@
-'use strict';
-
 function emoji_html(tokens, idx
 /*, options, env */
 ) {
@@ -169,4 +167,4 @@ function emoji_plugin(md, options) {
   md.core.ruler.push('emoji', create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
 }
 
-module.exports = emoji_plugin;
+export default emoji_plugin;
