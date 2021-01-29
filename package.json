@@ -1,6 +1,6 @@
 {
   "name": "@gerhobbelt/markdown-it-emoji",
-  "version": "2.0.0-7",
+  "version": "2.0.0-8",
   "description": "Emoji plugin for markdown-it markdown parser.",
   "keywords": [
     "markdown-it-plugin",
@@ -13,6 +13,7 @@
   ],
   "repository": "GerHobbelt/markdown-it-emoji",
   "license": "MIT",
+  "type": "module",
   "source": "index.js",
   "main": "dist/markdownItEmoji.js",
   "module": "dist/markdownItEmoji.mjs",
@@ -37,7 +38,7 @@
   "devDependencies": {
     "@gerhobbelt/markdown-it": "12.0.4-51",
     "@gerhobbelt/markdown-it-testgen": "0.1.6-17",
-    "@gerhobbelt/prepend-header": "1.0.10-4",
+    "@gerhobbelt/prepend-header": "1.1.0-7",
     "cross-env": "7.0.3",
     "eslint": "7.18.0",
     "microbundle": "0.13.0",

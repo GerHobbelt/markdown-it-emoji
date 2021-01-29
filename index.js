@@ -1,7 +1,14 @@
 
-import emojies_defs from './lib/data/full.json';
-import emojies_shortcuts from './lib/data/shortcuts';
-let bare_emoji_plugin = require('./bare');
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+// see https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_no_require_exports_module_exports_filename_dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, './lib/data/full.json')), 'utf8'));
+
+import emojies_shortcuts from './lib/data/shortcuts.js';
+import bare_emoji_plugin from './bare.js';
 
 
 export default function emoji_plugin(md, options) {

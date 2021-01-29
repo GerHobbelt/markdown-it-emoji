@@ -1,12 +1,10 @@
 
+import emoji_html from './lib/render.js';
+import emoji_replace from './lib/replace.js';
+import normalize_opts from './lib/normalize_opts.js';
 
 
-let emoji_html        = require('./lib/render');
-let emoji_replace     = require('./lib/replace');
-let normalize_opts    = require('./lib/normalize_opts');
-
-
-module.exports = function emoji_plugin(md, options) {
+export default function emoji_plugin(md, options) {
   let defaults = {
     defs: {},
     shortcuts: {},
@@ -18,4 +16,4 @@ module.exports = function emoji_plugin(md, options) {
   md.renderer.rules.emoji = emoji_html;
 
   md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-};
+}

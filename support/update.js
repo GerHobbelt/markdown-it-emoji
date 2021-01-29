@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 
-
-
 /* eslint-env es6 */
 /* eslint-disable no-console */
 
-const { join } = require('path');
-const fs       = require('fs');
-const https    = require('https');
+import { join } from 'path';
+import fs from 'fs';
+import path from 'path';
+import https from 'https';
+
+import { fileURLToPath } from 'url';
+// see https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_no_require_exports_module_exports_filename_dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const emojiSrc = 'https://raw.githubusercontent.com/github/gemoji/master/db/emoji.json';
 

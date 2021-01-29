@@ -33,19 +33,20 @@ bundle:
 	mkdir dist/light
 	microbundle --no-compress --target node --strict --name emoji-light    --no-sourcemap --no-pkg-main -f cjs -o dist/light ./light.js
 	mv dist/light/markdown-it-emoji.js dist/light/light.js
-	microbundle --no-compress --target node --strict --name test           --no-sourcemap --no-pkg-main -f cjs -o test test/test.js
-	mv test/markdown-it-emoji.js test/test5.js
+	mkdir dist/bare
+	microbundle --no-compress --target node --strict --name emoji-bare     --no-sourcemap --no-pkg-main -f cjs -o dist/bare  ./bare.js
+	mv dist/bare/markdown-it-emoji.js dist/bare/bare.js
+	#microbundle --no-compress --target node --strict --name test           --no-sourcemap --no-pkg-main -f cjs -o test test/test.js
+	#mv test/markdown-it-emoji.js test/test5.js
 	npx prepend-header 'dist/*js' support/header.js
 
 test:
-	# mocha
-	# kludgy way to execute the tests: `make build` compiles the tests to CommonJS in test5.js, then we execute those instead:
-	mocha test/test5.js
+	mocha
 
 coverage:
 	-rm -rf coverage
 	-rm -rf .nyc_output
-	cross-env NODE_ENV=test nyc mocha test/test5.js
+	cross-env NODE_ENV=test nyc mocha 
 
 report-coverage: lint coverage
 

@@ -1,49 +1,4 @@
-/*! markdown-it-emoji 2.0.0-8 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
-
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
-
-// Emoticons -> Emoji mapping.
-//
-// (!) Some patterns skipped, to avoid collisions
-// without increase matcher complicity. Than can change in future.
-//
-// Places to look for more emoticons info:
-//
-// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
-// - https://github.com/wooorm/emoticon/blob/master/Support.md
-// - http://factoryjoe.com/projects/emoticons/
-//
-var emojies_shortcuts = {
-  angry: ['>:(', '>:-('],
-  blush: [':")', ':-")'],
-  broken_heart: ['</3', '<\\3'],
-  // :\ and :-\ not used because of conflict with markdown escaping
-  confused: [':/', ':-/'],
-  // twemoji shows question
-  cry: [":'(", ":'-(", ':,(', ':,-('],
-  frowning: [':(', ':-('],
-  heart: ['<3'],
-  imp: [']:(', ']:-('],
-  innocent: ['o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)'],
-  joy: [":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D'],
-  kissing: [':*', ':-*'],
-  laughing: ['x-)', 'X-)'],
-  neutral_face: [':|', ':-|'],
-  open_mouth: [':o', ':-o', ':O', ':-O'],
-  rage: [':@', ':-@'],
-  smile: [':D', ':-D'],
-  smiley: [':)', ':-)'],
-  smiling_imp: [']:)', ']:-)'],
-  sob: [":,'(", ":,'-(", ';(', ';-('],
-  stuck_out_tongue: [':P', ':-P'],
-  sunglasses: ['8-)', 'B-)'],
-  sweat: [',:(', ',:-('],
-  sweat_smile: [',:)', ',:-)'],
-  unamused: [':s', ':-S', ':z', ':-Z', ':$', ':-$'],
-  wink: [';)', ';-)']
-};
+'use strict';
 
 function emoji_html(tokens, idx
 /*, options, env */
@@ -214,20 +169,4 @@ function emoji_plugin(md, options) {
   md.core.ruler.push('emoji', create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
 }
 
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
-
-const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, './lib/data/full.json')), 'utf8'));
-function emoji_plugin$1(md, options) {
-  let defaults = {
-    defs: emojies_defs,
-    shortcuts: emojies_shortcuts,
-    enabled: []
-  };
-  let opts = md.utils.assign({}, defaults, options || {});
-  emoji_plugin(md, opts);
-}
-
-export default emoji_plugin$1;
-//# sourceMappingURL=markdownItEmoji.mjs.map
+module.exports = emoji_plugin;

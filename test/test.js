@@ -7,13 +7,18 @@ import assert from 'assert';
 import markdownit from '@gerhobbelt/markdown-it';
 import generate from '@gerhobbelt/markdown-it-testgen';
 
-import emoji_bare from '../bare';
-import emoji_full from '../';
-import emoji_light from '../light';
+import emoji_bare from '../bare.js';
+import emoji_full from '../index.js';
+import emoji_light from '../light.js';
 
-import emojies_shortcuts from '../lib/data/shortcuts';
-import emojies_defs from '../lib/data/full.json';
-import emojies_defs_light from '../lib/data/light.json';
+import emojies_shortcuts from '../lib/data/shortcuts.js';
+
+import { fileURLToPath } from 'url';
+// see https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_no_require_exports_module_exports_filename_dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, '../lib/data/full.json')), 'utf8'));
+const emojies_defs_light = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, '../lib/data/light.json')), 'utf8'));
 
 
 
