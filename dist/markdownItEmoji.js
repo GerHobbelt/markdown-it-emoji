@@ -1,4 +1,4 @@
-/*! markdown-it-emoji 2.0.0-8 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
+/*! markdown-it-emoji 2.0.0-9 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
 
 import path from 'path';
 import fs from 'fs';
@@ -218,7 +218,7 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, './lib/data/full.json')), 'utf8'));
+const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, '../lib/data/full.json')), 'utf8'));
 function emoji_plugin$1(md, options) {
   let defaults = {
     defs: emojies_defs,

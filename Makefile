@@ -29,13 +29,17 @@ lintfix:
 bundle:
 	-rm -rf ./dist
 	mkdir dist
-	microbundle --no-compress --target node --strict --name ${GLOBAL_NAME} -f modern
+	echo "${GLOBAL_NAME}"
+	microbundle --no-compress --target node --strict --name emoji-full -f modern
+	mv dist/markdownItEmoji.modern.js dist/markdownItEmoji.js
+	mv dist/markdownItEmoji.modern.js.map dist/markdownItEmoji.js.map
 	mkdir dist/light
 	microbundle --no-compress --target node --strict --name emoji-light    --no-sourcemap --no-pkg-main -f modern -o dist/light ./light.js
 	mv dist/light/markdown-it-emoji.js dist/light/light.js
 	mkdir dist/bare
 	microbundle --no-compress --target node --strict --name emoji-bare     --no-sourcemap --no-pkg-main -f modern -o dist/bare  ./bare.js
 	mv dist/bare/markdown-it-emoji.js dist/bare/bare.js
+	node support/patch-dist.js dist/*.js dist/**/*.js 
 	npx prepend-header 'dist/*js' support/header.js
 
 test:
