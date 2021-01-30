@@ -29,10 +29,9 @@ lintfix:
 bundle:
 	-rm -rf ./dist
 	mkdir dist
-	echo "${GLOBAL_NAME}"
-	microbundle --no-compress --target node --strict --name emoji-full -f modern
-	mv dist/markdownItEmoji.modern.js dist/markdownItEmoji.js
-	mv dist/markdownItEmoji.modern.js.map dist/markdownItEmoji.js.map
+	microbundle --no-compress --target node --strict --name ${GLOBAL_NAME} -f modern
+	mv dist/${GLOBAL_NAME}.modern.js dist/${GLOBAL_NAME}.js
+	mv dist/${GLOBAL_NAME}.modern.js.map dist/${GLOBAL_NAME}.js.map
 	mkdir dist/light
 	microbundle --no-compress --target node --strict --name emoji-light    --no-sourcemap --no-pkg-main -f modern -o dist/light ./light.js
 	mv dist/light/markdown-it-emoji.js dist/light/light.js
