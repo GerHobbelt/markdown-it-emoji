@@ -201,7 +201,7 @@ function normalize_opts(options) {
   };
 }
 
-function emoji_plugin(md, options) {
+function emoji_plugin$1(md, options) {
   let defaults = {
     defs: {},
     shortcuts: {},
@@ -217,14 +217,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const emojies_defs = JSON.parse(fs.readFileSync(path.normalize(path.join(__dirname, '../../lib/data/light.json')), 'utf8'));
-function emoji_plugin$1(md, options) {
+function emoji_plugin(md, options) {
   let defaults = {
     defs: emojies_defs,
     shortcuts: emojies_shortcuts,
     enabled: []
   };
   let opts = md.utils.assign({}, defaults, options || {});
-  emoji_plugin(md, opts);
+  emoji_plugin$1(md, opts);
 }
 
-export default emoji_plugin$1;
+export default emoji_plugin;
