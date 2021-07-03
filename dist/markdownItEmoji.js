@@ -58,7 +58,7 @@ function emoji_html(tokens, idx
 //
 function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
   let arrayReplaceAt = md.utils.arrayReplaceAt,
-      ucm = md.utils.lib.ucmicro,
+      ucm = md.utils.ucmicro,
       ZPCc = new RegExp([ucm.Z.source, ucm.P.source, ucm.Cc.source].join('|'));
 
   function splitTextToken(text, level, Token) {
