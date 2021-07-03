@@ -1,4 +1,4 @@
-/*! markdown-it-emoji 2.0.0-12 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
+/*! markdown-it-emoji 2.0.0-13 https://github.com//GerHobbelt/markdown-it-emoji @license MIT */
 
 import path from 'path';
 import fs from 'fs';
